@@ -16,6 +16,7 @@ We generated four queries that generated various data:
 It wasn't clear what exactly the mentorship program would be but my assumption for the rest of this analysis is that we would want to look to those near retirement to mentor that next group behind them in order to retain a level of leadership immediately after the retirees leave, but also to start thinking about how this next wave of retirees (those born in the 1960's) would be backfilled as well.
 
 Some key takeaways from this first set of analysis:
+
 ![Image 1](/Resources/Image1_1.png)
 - There are 72,458 current employees that would likely retire in the very near future (those born in the 50s).  Assuming even distribution of retirements across a three-year period, this is still a significant burden on HR to process and onboard approximately 24,000 employees per year.
 ![Image 2](/Resources/Image1_2.png)
