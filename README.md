@@ -18,10 +18,15 @@ It wasn't clear what exactly the mentorship program would be but my assumption f
 Some key takeaways from this first set of analysis:
 
 ![Image 1](/Resources/Image1_1.png)
+
 - There are 72,458 current employees that would likely retire in the very near future (those born in the 50s).  Assuming even distribution of retirements across a three-year period, this is still a significant burden on HR to process and onboard approximately 24,000 employees per year.
+
 ![Image 2](/Resources/Image1_2.png)
+
 - There are only 1,549 currently employees eligible for the mentorship program (those born in the 60s).
+
 ![Image 3](/Resources/Image1_3.png)
+
 - Breaking down the near-term retiree pool by title, we see that 50,842 retirees have a "Senior" title.  This implies these individuals have significant experience in their fields and it might not be as easy to backfill internally without significant development.
 - The remaining 21,616 employees in the upcoming retirement wave have lower titles.  These positions might be easier to backfill.  FOr example, "Staff" could imply administrative assistants or other support roles that are more easily filled by temporary or contractors.  This could be a short-term solution: utilize a staffing agency to backfill the positions and effectively outsource the HR while having internal staff focus on filling the core "Senior" roles.
 
