@@ -32,4 +32,28 @@ Some key takeaways from this first set of analysis:
 
 ## Summary
 
+For the next round of analysis I wanted to look into some more details around specific departments that might have more issues with the retiree wave, as well as looking at what the talent pipeline looked like that would be available to potentially develop.  The thought is that, rather than try to backfill the senior roles, develop current employees and backfill at a lower level.
 
+I used the following SQL to build a table that contained a list of current employees, birth dates, current title, current department, and current salary:
+```
+SELECT em.emp_no, em.first_name, em.last_name, em.birth_date,
+	   tt.title AS current_title, 
+	   dp.dept_name AS current_dept,
+	   sl.salary AS current_salary
+INTO employee_bday_title_dept_salary
+FROM employees em 
+LEFT JOIN 
+	(SELECT a.* FROM titles a INNER JOIN 
+		(
+			SELECT emp_no, MAX(from_date) AS mdate
+			FROM titles 
+			GROUP BY emp_no
+		) b on a.emp_no = b.emp_no and a.from_date = b.mdate
+	) tt 
+	ON em.emp_no = tt.emp_no
+INNER JOIN dept_emp dm ON em.emp_no = dm.emp_no
+LEFT JOIN departments dp ON dm.dept_no = dp.dept_no
+LEFT JOIN salaries sl ON em.emp_no = sl.emp_no
+WHERE dm.to_date = '9999-01-01'
+ORDER BY em.emp_no;
+```
