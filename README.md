@@ -57,3 +57,6 @@ LEFT JOIN salaries sl ON em.emp_no = sl.emp_no
 WHERE dm.to_date = '9999-01-01'
 ORDER BY em.emp_no;
 ```
+This built the table "employee_bday_title_dept_salary" that I will be using for subsequent analysis.
+
+### "Silver Tsunami" Impact
