@@ -60,3 +60,4 @@ ORDER BY em.emp_no;
 This built the table "employee_bday_title_dept_salary" that I will be using for subsequent analysis.
 
 ### "Silver Tsunami" Impact
+
