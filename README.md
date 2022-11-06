@@ -83,8 +83,10 @@ And we get these results:
 
 A couple interesting takeaways:
 - The "silver tsunami" appears to impact all titles equally.  I was expecting to maybe see that one specific title or group would be more impacted, which might imply that the HR team could focus on one specific type of role.  
-- Almost 2/5 of each title is retiring in the next 4 years.
-- In all cases, the four-year bucket of soonest retirees exceeds subsequent four-year buckets following it, indeed confirming this is a "tsunami" and that the number of retirees in following years will be lower (assuming any backfilling happens on the low end).  HR can consider temporarily staffing up its recruiting team and should focus on bringing on younger workers to avoid having to backfill more retirees sooner.
+- Assuming everyone retires based on birth year, about 30% of each type of position retires.
+- At least from a title perspective, this doesn't appear to be an actual tsunami.  The subsequent four-year buckets based on birth year all have similar numbers to those born between 52 and 55.  To me this seems more like a "normal" year, unless all of these buckets are higher than those before them in which case the company might have issues with staffing.
+
+I also lookekd at the same breakdown by department to see if any one given department was seeing a higher percentage of retirees as a proportion of their population:  The SQL code and resulting table are below:
 
 ```
 SELECT 	tb.*,
@@ -101,3 +103,6 @@ FROM employee_bday_title_dept_salary
 GROUP BY current_dept
 ) tb;
 ```
+
+![Image 4](/Resources/Image2_2.PNG)
+
