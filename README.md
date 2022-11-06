@@ -59,5 +59,24 @@ ORDER BY em.emp_no;
 ```
 This built the table "employee_bday_title_dept_salary" that I will be using for subsequent analysis.
 
-### "Silver Tsunami" Impact
+I used the below to look at the waves of upcoming employees in two- to three-year buckets, based on birth year, in order to sort of visualize the wave as it is coming.  I then calculated the percentage of those born in '52 to '56 relative to the total population of the title to see if one group was losing more of their overall staff as others and if they would be hit hard in the next wave of retirement after that.
 
+```
+SELECT 	tb.*,
+		TO_CHAR(CAST(tb.retiree_52_56 AS FLOAT) / CAST(tb.total_emp AS FLOAT)*100, '999D9%') AS pct_retiring
+FROM
+(
+SELECT current_title,
+	COUNT(CASE WHEN (birth_date BETWEEN '1952-01-01' AND '1956-12-31') THEN emp_no END) AS retiree_52_56,
+	COUNT(CASE WHEN (birth_date BETWEEN '1957-01-01' AND '1959-12-31') THEN emp_no END) AS wave_57_59,
+	COUNT(CASE WHEN (birth_date BETWEEN '1960-01-01' AND '1962-12-31') THEN emp_no END) AS wave_60_62,
+	COUNT(CASE WHEN (birth_date BETWEEN '1963-01-01' AND '1965-12-31') THEN emp_no END) AS wave_63_65,
+	COUnT(emp_no) AS total_emp
+FROM employee_bday_title_dept_salary
+GROUP BY current_title
+) tb;
+```
+
+And we get these results:
+
+![Image 4](/Resources/Image2_1.png)
