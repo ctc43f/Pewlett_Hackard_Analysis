@@ -108,4 +108,4 @@ GROUP BY current_dept
 
 The breakdowns are similar to what I saw in the summary by title: each department is roughly impacted the same by the retirees born between 1952 and 1955.  Again, I don't see any one department with a higher percentage of population retiring, and the breakdown of four-year birth year buckets have roughly the bnumber that would be retiring in each section.
 
-** My key takeaway is that the upcoming round of retirements is not abnormally higher than those that will come in the years after it.  I don't have any historical data to tell me if this four-year wave will be higher than prior years, but it appears the retiree population is evenly distributed.**
+**My key takeaway is that the upcoming round of retirements is not abnormally higher than those that will come in the years after it.  I don't have any historical data to tell me if this four-year wave will be higher than prior years, but it appears the retiree population is evenly distributed.**
