@@ -63,14 +63,14 @@ I used the below to look at the waves of upcoming employees in two- to three-yea
 
 ```
 SELECT 	tb.*,
-		TO_CHAR(CAST(tb.retiree_52_56 AS FLOAT) / CAST(tb.total_emp AS FLOAT)*100, '999D9%') AS pct_retiring
+		TO_CHAR(CAST(tb.retiree_52_55 AS FLOAT) / CAST(tb.total_emp AS FLOAT)*100, '999D9%') AS pct_retiring
 FROM
 (
 SELECT current_title,
-	COUNT(CASE WHEN (birth_date BETWEEN '1952-01-01' AND '1956-12-31') THEN emp_no END) AS retiree_52_56,
-	COUNT(CASE WHEN (birth_date BETWEEN '1957-01-01' AND '1959-12-31') THEN emp_no END) AS wave_57_59,
-	COUNT(CASE WHEN (birth_date BETWEEN '1960-01-01' AND '1962-12-31') THEN emp_no END) AS wave_60_62,
-	COUNT(CASE WHEN (birth_date BETWEEN '1963-01-01' AND '1965-12-31') THEN emp_no END) AS wave_63_65,
+	COUNT(CASE WHEN (birth_date BETWEEN '1952-01-01' AND '1955-12-31') THEN emp_no END) AS retiree_52_55,
+	COUNT(CASE WHEN (birth_date BETWEEN '1956-01-01' AND '1959-12-31') THEN emp_no END) AS wave_56_59,
+	COUNT(CASE WHEN (birth_date BETWEEN '1960-01-01' AND '1963-12-31') THEN emp_no END) AS wave_60_63,
+	COUNT(CASE WHEN (birth_date BETWEEN '1964-01-01' AND '1965-12-31') THEN emp_no END) AS wave_64_65,
 	COUNT(emp_no) AS total_emp
 FROM employee_bday_title_dept_salary
 GROUP BY current_title
@@ -86,4 +86,18 @@ A couple interesting takeaways:
 - Almost 2/5 of each title is retiring in the next 4 years.
 - In all cases, the four-year bucket of soonest retirees exceeds subsequent four-year buckets following it, indeed confirming this is a "tsunami" and that the number of retirees in following years will be lower (assuming any backfilling happens on the low end).  HR can consider temporarily staffing up its recruiting team and should focus on bringing on younger workers to avoid having to backfill more retirees sooner.
 
-
+```
+SELECT 	tb.*,
+		TO_CHAR(CAST(tb.retiree_52_55 AS FLOAT) / CAST(tb.total_emp AS FLOAT)*100, '999D9%') AS pct_retiring
+FROM
+(
+SELECT current_dept,
+	COUNT(CASE WHEN (birth_date BETWEEN '1952-01-01' AND '1955-12-31') THEN emp_no END) AS retiree_52_55,
+	COUNT(CASE WHEN (birth_date BETWEEN '1956-01-01' AND '1959-12-31') THEN emp_no END) AS wave_56_59,
+	COUNT(CASE WHEN (birth_date BETWEEN '1960-01-01' AND '1963-12-31') THEN emp_no END) AS wave_60_63,
+	COUNT(CASE WHEN (birth_date BETWEEN '1964-01-01' AND '1965-12-31') THEN emp_no END) AS wave_64_65,
+	COUNT(emp_no) AS total_emp
+FROM employee_bday_title_dept_salary
+GROUP BY current_dept
+) tb;
+```
