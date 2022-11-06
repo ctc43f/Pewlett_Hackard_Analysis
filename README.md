@@ -79,4 +79,4 @@ GROUP BY current_title
 
 And we get these results:
 
-![Image 4](/Resources/Image2_1.png)
+![Image 4](/Resources/Image2_1.PNG)
