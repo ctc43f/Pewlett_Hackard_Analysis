@@ -80,3 +80,8 @@ GROUP BY current_title
 And we get these results:
 
 ![Image 4](/Resources/Image2_1.PNG)
+
+A couple interesting takeaways:
+- The "silver tsunami" appears to impact all titles equally.  I was expecting to maybe see that one specific title or group would be more impacted, which might imply that the HR team could focus on one specific type of role.  
+- Almost 2/5 of each title is retiring in the next 4 years.
+- It appears that the 
