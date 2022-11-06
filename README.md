@@ -71,7 +71,7 @@ SELECT current_title,
 	COUNT(CASE WHEN (birth_date BETWEEN '1957-01-01' AND '1959-12-31') THEN emp_no END) AS wave_57_59,
 	COUNT(CASE WHEN (birth_date BETWEEN '1960-01-01' AND '1962-12-31') THEN emp_no END) AS wave_60_62,
 	COUNT(CASE WHEN (birth_date BETWEEN '1963-01-01' AND '1965-12-31') THEN emp_no END) AS wave_63_65,
-	COUnT(emp_no) AS total_emp
+	COUNT(emp_no) AS total_emp
 FROM employee_bday_title_dept_salary
 GROUP BY current_title
 ) tb;
@@ -84,4 +84,6 @@ And we get these results:
 A couple interesting takeaways:
 - The "silver tsunami" appears to impact all titles equally.  I was expecting to maybe see that one specific title or group would be more impacted, which might imply that the HR team could focus on one specific type of role.  
 - Almost 2/5 of each title is retiring in the next 4 years.
-- It appears that the 
+- In all cases, the four-year bucket of soonest retirees exceeds subsequent four-year buckets following it, indeed confirming this is a "tsunami" and that the number of retirees in following years will be lower (assuming any backfilling happens on the low end).  HR can consider temporarily staffing up its recruiting team and should focus on bringing on younger workers to avoid having to backfill more retirees sooner.
+
+
